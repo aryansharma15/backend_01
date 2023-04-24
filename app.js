@@ -22,6 +22,10 @@ app.get("/about", (req, res) => {
     res.status(200).json(about);
 })
 
+app.get("/api/v1/:token", (req, res) => {
+    console.log(req.params.token);
+    res.status(200).json({ param: req.params.token })
+})
 
 app.get("/features", (req, res) => {
     res.send("Test modern apps directly in your browser");
