@@ -27,6 +27,15 @@ app.get("/api/v1/:token", (req, res) => {
     res.status(200).json({ param: req.params.token })
 })
 
+// Trying to hide password
+
+app.get("/api/checkname/:password", (req, res) => {
+    console.log(req.params.password);
+    res.status(404).send("Password is 123456.");
+    res.status(200).json({ param: req.params.password })
+});
+
+
 app.get("/features", (req, res) => {
     res.send("Test modern apps directly in your browser");
 })
